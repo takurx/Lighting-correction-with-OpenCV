@@ -47,7 +47,8 @@ def cropText(img,clear_image):
     edges = cv2.Canny(img,100,200)#canny edge detection
     kernel = cv2.getStructuringElement(cv2.MORPH_CROSS, (3,3))  # Define the area of focus around each pixel
     dilation = cv2.dilate(edges, kernel, iterations=9)  # dilate merge all edges into one big group
-    _, contours, hierarchy = cv2.findContours(dilation, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)  # This method returns 3 variables for getting contours
+    #_, contours, hierarchy = cv2.findContours(dilation, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)  # This method returns 3 variables for getting contours
+    contours, hierarchy = cv2.findContours(dilation, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)  # fix for OpenCV 4.x # This method returns 3 variables for getting contours
     for contour in contours:
             # get sizes of the rectangle return by the contours
             [x, y, w, h] = cv2.boundingRect(contour)
