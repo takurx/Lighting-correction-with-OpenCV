@@ -54,3 +54,5 @@ References:
     - OpenCV documentation
         I refer to the actual opencv documentation to understand every method used in this assignment
         https://docs.opencv.org/3.1.0/
+
+test2.png from https://clouard.users.greyc.fr/Pantheon/experiments/illumination-correction/index-en.html
